@@ -1,8 +1,8 @@
 package com.cosmink.resources;
 
-import com.cosmink.models.authenticationToken.AuthenticationToken;
+import com.cosmink.services.security.authenticationToken.AuthenticationToken;
 import com.cosmink.models.user.User;
-import com.cosmink.models.userCredentials.UserCredentials;
+import com.cosmink.models.user.UserCredentials;
 import com.cosmink.services.security.AuthenticationTokenService;
 import com.cosmink.services.security.UsernamePasswordValidator;
 

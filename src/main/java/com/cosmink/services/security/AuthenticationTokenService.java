@@ -1,7 +1,7 @@
 package com.cosmink.services.security;
 
 import com.cosmink.configuration.Configurable;
-import com.cosmink.models.authenticationTokenDetails.AuthenticationTokenDetails;
+import com.cosmink.services.security.authenticationToken.AuthenticationTokenDetails;
 import com.cosmink.models.authority.Authority;
 
 import javax.enterprise.context.ApplicationScoped;

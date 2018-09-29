@@ -1,7 +1,7 @@
 package com.cosmink.filters;
 
-import com.cosmink.models.authenticatedUserDetails.AuthenticatedUserDetails;
-import com.cosmink.models.authenticationTokenDetails.AuthenticationTokenDetails;
+import com.cosmink.models.user.AuthenticatedUserDetails;
+import com.cosmink.services.security.authenticationToken.AuthenticationTokenDetails;
 import com.cosmink.models.user.User;
 import com.cosmink.models.user.UserDao;
 import com.cosmink.services.security.AuthenticationTokenService;

@@ -1,4 +1,4 @@
-package com.cosmink.models.email;
+package com.cosmink.services.email.email;
 
 public class Email {
 

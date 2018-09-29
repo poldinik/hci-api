@@ -1,6 +1,6 @@
-package com.cosmink.services.emails;
+package com.cosmink.services.email;
 
-import com.cosmink.models.email.Email;
+import com.cosmink.services.email.email.Email;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

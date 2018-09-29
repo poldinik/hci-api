@@ -1,6 +1,4 @@
-package com.cosmink.models.authenticationToken;
-
-import com.cosmink.models.authenticationTokenDetails.AuthenticationTokenDetails;
+package com.cosmink.services.security.authenticationToken;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

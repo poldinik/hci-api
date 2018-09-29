@@ -1,4 +1,4 @@
-package com.cosmink.models.authenticatedUserDetails;
+package com.cosmink.models.user;
 
 import com.cosmink.models.authority.Authority;
 

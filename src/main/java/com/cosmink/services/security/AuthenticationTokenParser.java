@@ -1,6 +1,6 @@
 package com.cosmink.services.security;
 
-import com.cosmink.models.authenticationTokenDetails.AuthenticationTokenDetails;
+import com.cosmink.services.security.authenticationToken.AuthenticationTokenDetails;
 import com.cosmink.models.authority.Authority;
 import io.jsonwebtoken.*;
 

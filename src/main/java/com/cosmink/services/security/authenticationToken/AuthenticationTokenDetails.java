@@ -1,4 +1,4 @@
-package com.cosmink.models.authenticationTokenDetails;
+package com.cosmink.services.security.authenticationToken;
 
 import com.cosmink.models.authority.Authority;
 

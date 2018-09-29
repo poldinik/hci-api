@@ -4,7 +4,7 @@ import com.cosmink.models.authority.Authority;
 import com.cosmink.models.user.User;
 import com.cosmink.models.user.UserDao;
 import com.cosmink.models.user.UserFactory;
-import com.cosmink.models.userCredentials.UserCredentials;
+import com.cosmink.models.user.UserCredentials;
 import com.cosmink.services.security.PasswordEncoder;
 
 import javax.annotation.security.PermitAll;
