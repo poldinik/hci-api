@@ -8,8 +8,6 @@ import javax.annotation.security.PermitAll;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 
 @Path("/wolfram")
@@ -75,6 +73,8 @@ public class WolframResource {
                 // We ignored many other types of Wolfram|Alpha output, such as warnings, assumptions, etc.
                 // These can be obtained by methods of WAQueryResult or objects deeper in the hierarchy.
             }
+
+            return Response.ok(queryResult, MediaType.APPLICATION_JSON).build();
         } catch (WAException e) {
             e.printStackTrace();
         }
