@@ -40,4 +40,16 @@ public class SemanticVideoDao extends Dao implements CRUD<SemanticVideo>{
         }
         return semanticVideos.get(0);
     }
+
+
+    public SemanticVideo findBySignificant(String identifier) {
+        List<SemanticVideo> semanticVideos = entityManager.createQuery("SELECT s FROM SemanticVideo s WHERE s.significant = :identifier", SemanticVideo.class)
+                .setParameter("identifier", identifier)
+                .setMaxResults(1)
+                .getResultList();
+        if (semanticVideos.isEmpty()) {
+            return null;
+        }
+        return semanticVideos.get(0);
+    }
 }

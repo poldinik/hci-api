@@ -31,6 +31,18 @@ public class SemanticVideoResource {
 
             video.setLink(video.getLink() + "?" + "ticket=TICKET_e9eb6b5a0758e1ead1ba979b825042ac472a352f");
 
+            String significant = "";
+
+            int numberOfWords = video.getWords().length;
+
+            for(int i = 0; i< numberOfWords-1; i++){
+                significant = significant + video.getWords()[i] + " ";
+            }
+
+            significant = significant + video.getWords()[numberOfWords-1];
+
+            video.setSignificant(significant);
+
             semanticVideoDao.create(video);
         }
         return Response.ok(semanticVideos, MediaType.APPLICATION_JSON).build();
@@ -41,9 +53,22 @@ public class SemanticVideoResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional
     @PermitAll
-    public Response getSemanticVideo(@QueryParam("uuid") String uuid){
+    public Response getSemanticVideoByUuid(@QueryParam("uuid") String uuid){
 
         SemanticVideo semanticVideo = semanticVideoDao.findByUuid(uuid);
+
+        return Response.ok(semanticVideo, MediaType.APPLICATION_JSON).build();
+    }
+
+    @GET
+    @Path("significant")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
+    @PermitAll
+    public Response getSemanticVideoBySignificant(@QueryParam("value") String value){
+
+        SemanticVideo semanticVideo = semanticVideoDao.findBySignificant(value);
+        System.out.println(semanticVideo.getName());
 
         return Response.ok(semanticVideo, MediaType.APPLICATION_JSON).build();
     }
