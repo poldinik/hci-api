@@ -6,10 +6,7 @@ import com.cosmink.models.semantic.SemanticVideoDao;
 import javax.annotation.security.PermitAll;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Date;
@@ -32,8 +29,22 @@ public class SemanticVideoResource {
             video.setCreated(new Date());
             video.setUpdate(new Date());
 
+            video.setLink(video.getLink() + "?" + "ticket=TICKET_e9eb6b5a0758e1ead1ba979b825042ac472a352f");
+
             semanticVideoDao.create(video);
         }
         return Response.ok(semanticVideos, MediaType.APPLICATION_JSON).build();
+    }
+
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
+    @PermitAll
+    public Response getSemanticVideo(@QueryParam("uuid") String uuid){
+
+        SemanticVideo semanticVideo = semanticVideoDao.findByUuid(uuid);
+
+        return Response.ok(semanticVideo, MediaType.APPLICATION_JSON).build();
     }
 }
